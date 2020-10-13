@@ -20,11 +20,11 @@ Dans le dossier screenshots vous trouverez des apercus du jeu
 
 ## Test
 Pour tester le jeu il suffit juste de copier l'executable qui se trouve dans le dossier bin
-dans le dossier ou se trouve les fichiers .dll
+et le mettre dans le dossier ou se trouve les fichiers .dll
 
 ## Remerciement et invitation
 Je vous remercie d'avoir jeter un coup d'oeil a mes projets.
-Si vous travaillez sur un projet identique et que vous chercher des solutions ou des idees,j'espere que vous le trouverez ici
+Si vous travaillez sur un projet identique et que vous chercher des solutions ou des idees,j'espere que vous les trouverez ici
 Sinon si c'est de l'aide que vous pouvez m'apporter,n'hesiter surtout pas(graphique ou code) 
 
 
