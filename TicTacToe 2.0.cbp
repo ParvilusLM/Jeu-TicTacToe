@@ -27,6 +27,7 @@
 			<Add library="C:/Program Files (x86)/CodeBlocks/SFML-2.5.1/lib/libsfml-window-d.a" />
 			<Add directory="C:/Program Files (x86)/CodeBlocks/SFML-2.5.1/lib" />
 		</Linker>
+		<Unit filename="source/constantes.h" />
 		<Unit filename="source/controleur.cpp" />
 		<Unit filename="source/controleur.h" />
 		<Unit filename="source/decor.cpp" />

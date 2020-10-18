@@ -9,7 +9,6 @@ bool jeuPause=false;
 bool jeuFinPartie=false;
 bool jeuDebut=false;
 bool jeuRejouer=false;
-bool jeuSauvegarde=false;
 int sourisX=0,sourisY=0;
 
 int main()
