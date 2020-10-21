@@ -11,6 +11,8 @@ public:
     Son& getSon();
     Joueur& getJoueur;
 
+    void afficheFondEc();
+
     ~Decor();
 
 private:
@@ -19,6 +21,9 @@ private:
     Info* m_info;
     Son* m_son;
     Joueur* m_joueur;
+
+    sf::Texture m_tFondEc;
+    sf::Sprite m_sFondEc;
 
 };
 
