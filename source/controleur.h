@@ -1,6 +1,9 @@
 #ifndef DEF_CONTROLEUR
 #define DEF_CONTROLEUR
 
+#include <SFML/Graphics.hpp>
+#include "decor.h"
+
 class Controleur
 {
 public:
@@ -25,7 +28,7 @@ public:
     ~Controleur();
 
 private:
-    sf::RenderWindow m_fenetre;
+    sf::RenderWindow* m_fenetre;
     Decor* m_decor;
 
 };

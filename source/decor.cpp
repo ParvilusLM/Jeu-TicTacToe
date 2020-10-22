@@ -30,7 +30,7 @@ Son& Decor::getSon()
 
 }
 
-Joueur& Decor::getJoueur
+Joueur& Decor::getJoueur()
 {
 
 }

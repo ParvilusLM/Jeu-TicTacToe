@@ -1,8 +1,10 @@
 #include "controleur.h"
 
-Controleur::Controleur(sf::RenderWindow& fenetre)
+Controleur::Controleur(sf::RenderWindow& fenetre):m_fenetre(0)
 {
+    m_fenetre=&fenetre;
 
+    m_decor=new Decor(*m_fenetre);
 }
 
 void Controleur::debutJeu()
@@ -37,7 +39,7 @@ void Controleur::finPartie()
 
 void Controleur::afficheFondEc()
 {
-
+    m_decor->afficheFondEc();
 }
 
 void Controleur::afficheJeu()

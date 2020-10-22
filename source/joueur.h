@@ -10,7 +10,7 @@
 class Joueur
 {
 public:
-    Joueur(sf::RenderWindow fenetre);
+    Joueur(sf::RenderWindow& fenetre);
     void initGrille(int taille);
     bool selectionCase(int joueur);
     void marquageCase(int joueur);
@@ -21,13 +21,8 @@ public:
 
     ~Joueur();
 
-
-
-
-
-
 private:
-    sf::RenderWindow m_fenetre;
+    sf::RenderWindow* m_fenetre;
     GrilleJeu m_grille;
 
     sf::Texture m_tMarqueur;

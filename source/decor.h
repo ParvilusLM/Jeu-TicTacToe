@@ -1,6 +1,13 @@
 #ifndef DEF_DECOR
 #define DEF_DECOR
 
+#include <SFML/Graphics.hpp>
+
+#include "menu.h"
+#include "info.h"
+#include "son.h"
+#include "joueur.h"
+
 class Decor
 {
 public:
@@ -9,7 +16,7 @@ public:
     Menu& getMenu();
     Info& getInfo();
     Son& getSon();
-    Joueur& getJoueur;
+    Joueur& getJoueur();
 
     void afficheFondEc();
 

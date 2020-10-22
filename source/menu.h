@@ -2,6 +2,9 @@
 #define DEF_MENU
 
 #include <SFML/Graphics.hpp>
+#include "enums.h"
+#include "varG.h"
+#include "constantes.h"
 
 class Menu
 {
@@ -9,13 +12,10 @@ public:
     Menu(sf::RenderWindow& fenetre);
 
     void initMenuP();
+    void initMenuSelectP();
     void initMenuI();
-    void initMenuI1();
-    void initMenuI2();
-    void initMenuI3();
     void initMenuPause();
     void initMenuFinPart();
-    void initMenuEnregScore();
 
     void setTypeMenu(int menuActuel);
     TypeMenu getTypeMenu();
@@ -29,13 +29,10 @@ public:
     void quitterJeu();
 
     void afficheMenuP();
+    void afficheMenuSelectP();
     void afficheMenuI();
-    void afficheMenuI1();
-    void afficheMenuI2();
-    void afficheMenuI3();
     void afficheMenuPause();
     void afficheMenuFinPart();
-    void afficheMenuEnregScore();
     void afficheMenu();
 
     ~Menu();
@@ -65,21 +62,6 @@ private:
     sf::Texture m_tMenuI;
     sf::Sprite m_sMenuI;
 
-
-    //pour menu instructions 1
-    sf::Texture m_tMenuI1;
-    sf::Sprite m_sMenuI1;
-
-
-    //pour menu instructions 2
-    sf::Texture m_tMenuI2;
-    sf::Sprite m_sMenuI2;
-
-
-    //pour menu instructions 3
-    sf::Texture m_tMenuI3;
-    sf::Sprite m_sMenuI3;
-
     //pour menu pause
     sf::Texture m_tMenuPause;
     sf::Sprite m_sMenuPause;
@@ -88,9 +70,6 @@ private:
     sf::Texture m_tMenuFinP;
     sf::Sprite m_sMenuFinP;
 
-    //pour menu enregistre score
-    sf::Texture m_tMenuEnregScore;
-    sf::Sprite m_sMenuEnregScore;
 
     //boites engl des boutons
     sf::FloatRect boiteEBJ,boiteEBI,boiteEBQ,boiteEBPr,boiteEBSuiv,boiteEBOk,boiteEBPR,boiteEBPI,boiteEBPQ,boiteEBFQ,boiteEBFR,boiteEBESOk;

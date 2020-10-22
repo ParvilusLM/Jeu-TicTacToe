@@ -1,6 +1,8 @@
 #include <iostream>
+#include <ctime>
 
 #include <SFML/Graphics.hpp>
+#include "controleur.h"
 
 using namespace sf;
 
@@ -18,6 +20,7 @@ int main()
 
     RenderWindow fenetre(VideoMode(900,700),"Tetris");
 
+    Controleur controleurJ(fenetre);
 
     while(fenetre.isOpen())
     {
@@ -199,16 +202,18 @@ int main()
         }
         else
         {
+            /*
             if(jeuSauvegarde)
             {
                 //controleurJ.sauvegardeScore();
                 //controleurJ.reinitTablScore();
             }
+            */
         }
 
         fenetre.clear(Color(82,82,82));
 
-        //controleurJ.afficheFondEc();
+        controleurJ.afficheFondEc();
 
         if(jeuEnCours)
         {
