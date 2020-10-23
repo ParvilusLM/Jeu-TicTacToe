@@ -49,14 +49,24 @@ private:
 
     int m_boutonPress;
 
-    //pour le masque selecteur
-    sf::Texture m_tSelectInstr,m_tSelectMP,m_tSelectMPause,m_tSelectMGO,m_tSelectEScore;
-    sf::Sprite m_sIndicSelect;
+    //textures pour les boutons
+    sf::Texture m_tSelectInstr,m_tSelectMP,m_tSelectTypeJ,m_tSelectMPause,m_tSelectMGO;
+
+    //sprites pour les boutons
+    sf::Sprite m_sbInfo,m_sbSon,m_sbJoueur1,m_sbJoueur2;//menuPrincipal
+    sf::Sprite m_sbMenu,m_sbGrille1,m_sbGrille2,m_sbGrille3;//menuSelectTypeJ
+    sf::Sprite m_sbOk;//menuInstructions
+    sf::Sprite m_sbResume,m_sbRejouer,m_sbInstructions,m_sbQuitter;//menuPause
+    sf::Sprite m_sbMenuFP,m_sbRejouerFP;//menu finPartie
+
 
     //pour menu principal
     sf::Texture m_tMenuP;
     sf::Sprite m_sMenuP;
 
+    //pour menu TypeJeu
+    sf::Texture m_tTypeJeu;
+    sf::Sprite m_sTypeJeu;
 
     //pour menu instructions
     sf::Texture m_tMenuI;
@@ -70,11 +80,15 @@ private:
     sf::Texture m_tMenuFinP;
     sf::Sprite m_sMenuFinP;
 
-
+    /*
     //boites engl des boutons
-    sf::FloatRect boiteEBJ,boiteEBI,boiteEBQ,boiteEBPr,boiteEBSuiv,boiteEBOk,boiteEBPR,boiteEBPI,boiteEBPQ,boiteEBFQ,boiteEBFR,boiteEBESOk;
-
-
+    sf::FloatRect boiteEBJ1,boiteEBJ2,boiteEBI,boiteEBS;
+    sf::FloatRect boiteEBM,boiteEBC1,boiteEBC2,boiteEBC3;
+    sf::FloatRect boiteEBPaus;
+    sf::FloatRect boiteEBOk;
+    sf::FloatRect boiteEBPR,boiteEBRej,boiteEBPI,boiteEBPQ;
+    sf::FloatRect boiteEBFQ,boiteEBFR;
+    */
 
 };
 

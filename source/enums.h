@@ -20,32 +20,30 @@ struct GrilleJeu
 enum TypeMenu
 {
     MenuPrincipal,
-    MenuInstructions1,
-    MenuInstructions2,
-    MenuInstructions3,
+    MenuSelectTypeJ,
+    MenuInstructions,
     MenuPause,
-    MenuFinPartie,
-    MenuEnregScore
-
+    MenuFinPartie
 };
 
 enum
 {
     AUCUN_EL_ACT,
-    JOUER_ACTIF,
+    JOUEUR1_ACTIF,
+    JOUEUR2_ACTIF,
     INSTRUCTIONS_ACTIF,
-    QUITTER_ACTIF,
+    SON_ACTIF,
+    MENU_ACTIF,
+    GRILLE1_ACTIF,
+    GRILLE2_ACTIF,
+    GRILLE3_ACTIF,
     OK_ACTIF,
-    PRECEDENT_ACTIF,
-    SUIVANT_ACTIF,
-    RETOUR_ACTIF,
     PAUSER_ACTIF,
+    PAUSEREJ_ACTIF,
     PAUSEI_ACTIF,
     PAUSEQ_ACTIF,
     FINPQ_ACTIF,
-    FINPR_ACTIF,
-    ESOk_ACTIF
-
+    FINPR_ACTIF
 };
 
 
