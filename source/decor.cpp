@@ -1,5 +1,7 @@
 #include "decor.h"
 
+using namespace std;
+
 Decor::Decor(sf::RenderWindow& fenetre):m_fenetre(0)
 {
     m_fenetre=&fenetre;
@@ -17,7 +19,7 @@ Decor::Decor(sf::RenderWindow& fenetre):m_fenetre(0)
 
 Menu& Decor::getMenu()
 {
-
+    return *m_menu;
 }
 
 Info& Decor::getInfo()

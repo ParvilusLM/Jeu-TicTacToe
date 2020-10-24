@@ -28,6 +28,8 @@ public:
     void resetBoutonPress();
     void quitterJeu();
 
+    void gestTexture(int bouton, int type);
+
     void afficheMenuP();
     void afficheMenuSelectP();
     void afficheMenuI();

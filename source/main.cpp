@@ -38,12 +38,12 @@ int main()
                 sourisY=evenement.mouseMove.y;
                 if(!jeuEnCours)
                 {
-                    //controleurJ.gestionDplSouris();
+                    controleurJ.gestionDplSouris();
 
                 }
                 else if(jeuEnCours && jeuPause)
                 {
-                    //controleurJ.gestionDplSouris();
+                    controleurJ.gestionDplSouris();
                 }
                 else
                 {
@@ -64,7 +64,7 @@ int main()
 
                         if (button == Mouse::Left) // Bouton gauche
                         {
-                            //controleurJ.gestionSelecSouris();
+                            controleurJ.gestionSelecSouris();
                         }
 
                         if (button == Mouse::Right) // Bouton droite
@@ -93,7 +93,7 @@ int main()
                     Mouse::Button button = evenement.mouseButton.button;
                     if (button == Mouse::Left) // Bouton gauche
                     {
-                        //controleurJ.gestionSelecSouris();
+                        controleurJ.gestionSelecSouris();
                         if(jeuDebut)
                         {
                             //controleurJ.debutJeu();
@@ -221,7 +221,7 @@ int main()
         }
         else
         {
-            //controleurJ.afficheMenu();
+            controleurJ.afficheMenu();
         }
 
         fenetre.display();

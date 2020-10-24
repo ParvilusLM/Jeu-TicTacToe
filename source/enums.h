@@ -46,6 +46,25 @@ enum
     FINPR_ACTIF
 };
 
+enum
+{
+    B_INFO,
+    B_SON,
+    B_JOUEUR1,
+    B_JOUEUR2,
+    B_OK,
+    B_MENU,
+    B_GRILLE1,
+    B_GRILLE2,
+    B_GRILLE3,
+    B_PAUSER,
+    B_PAUSEREJ,
+    B_PAUSEI,
+    B_PAUSEQ,
+    B_FINPQ,
+    B_FINPR
+};
+
 
 
 #endif // DEF_ENUMS
