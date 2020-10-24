@@ -31,7 +31,8 @@ void Controleur::gestionSelecSouris()
 
 void Controleur::gestMaJ()
 {
-
+    //gestions boutons presses pour les menus
+    if(m_decor->)
 }
 
 void Controleur::finPartie()

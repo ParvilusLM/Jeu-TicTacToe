@@ -164,6 +164,13 @@ void Menu::retourMenuP()
 
 void Menu::elementActif()
 {
+    int compt=0;
+    while(compt<15)
+    {
+        gestTexture(compt,1);
+        compt++;
+    }
+
     if(m_typeMenu==MenuPrincipal)
     {
         if(collisionTS(m_sbJoueur1.getGlobalBounds()))
@@ -211,16 +218,20 @@ void Menu::elementActif()
         else if(collisionTS(m_sbGrille2.getGlobalBounds()))
         {
             m_elementActif=GRILLE2_ACTIF;
+            gestTexture(B_GRILLE2,2);
         }
-        else if(collisionTS(m_sbGrille2.getGlobalBounds()))
+        else if(collisionTS(m_sbGrille3.getGlobalBounds()))
         {
             m_elementActif=GRILLE3_ACTIF;
+            gestTexture(B_GRILLE3,2);
         }
         else
         {
             m_elementActif=AUCUN_EL_ACT;
             gestTexture(B_MENU,1);
             gestTexture(B_GRILLE1,1);
+            gestTexture(B_GRILLE2,1);
+            gestTexture(B_GRILLE3,1);
         }
     }
     else if(m_typeMenu==MenuInstructions)
@@ -228,10 +239,12 @@ void Menu::elementActif()
         if(collisionTS(m_sbOk.getGlobalBounds()))
         {
             m_elementActif=OK_ACTIF;
+            gestTexture(B_OK,2);
         }
         else
         {
             m_elementActif=AUCUN_EL_ACT;
+            gestTexture(B_OK,1);
         }
     }
     else if(m_typeMenu==MenuPause)
@@ -239,22 +252,30 @@ void Menu::elementActif()
         if(collisionTS(m_sbResume.getGlobalBounds()))
         {
             m_elementActif=PAUSER_ACTIF;
+            gestTexture(B_PAUSER,2);
         }
         else if(collisionTS(m_sbRejouer.getGlobalBounds()))
         {
             m_elementActif=PAUSEREJ_ACTIF;
+            gestTexture(B_PAUSEREJ,2);
         }
         else if(collisionTS(m_sbInstructions.getGlobalBounds()))
         {
             m_elementActif=PAUSEI_ACTIF;
+            gestTexture(B_PAUSEI,2);
         }
         else if(collisionTS(m_sbQuitter.getGlobalBounds()))
         {
             m_elementActif=PAUSEQ_ACTIF;
+            gestTexture(B_PAUSEQ,2);
         }
         else
         {
             m_elementActif=AUCUN_EL_ACT;
+            gestTexture(B_PAUSER,1);
+            gestTexture(B_PAUSEREJ,1);
+            gestTexture(B_PAUSEI,1);
+            gestTexture(B_PAUSEQ,1);
         }
 
     }
@@ -263,14 +284,18 @@ void Menu::elementActif()
         if(collisionTS(m_sbMenuFP.getGlobalBounds()))
         {
             m_elementActif=FINPQ_ACTIF;
+            gestTexture(B_FINPQ,2);
         }
         else if(collisionTS(m_sbRejouerFP.getGlobalBounds()))
         {
             m_elementActif=FINPR_ACTIF;
+            gestTexture(B_FINPR,2);
         }
         else
         {
             m_elementActif=AUCUN_EL_ACT;
+            gestTexture(B_FINPQ,1);
+            gestTexture(B_FINPR,1);
         }
 
     }
@@ -288,26 +313,26 @@ void Menu::selectionElActif()
         if(m_elementActif==JOUEUR1_ACTIF)
         {
             m_elementActif=AUCUN_EL_ACT;
-            m_boutonPress=JOUEUR1_ACTIF;
+            m_boutonPress=B_JOUEUR1;
             m_typeMenu=MenuSelectTypeJ;
 
         }
         else if(m_elementActif==JOUEUR2_ACTIF)
         {
             m_elementActif=AUCUN_EL_ACT;
-            m_boutonPress=JOUEUR2_ACTIF;
+            m_boutonPress=B_JOUEUR2;
             m_typeMenu=MenuSelectTypeJ;
         }
         else if(m_elementActif==INSTRUCTIONS_ACTIF)
         {
             m_elementActif=AUCUN_EL_ACT;
-            m_boutonPress=INSTRUCTIONS_ACTIF;
+            m_boutonPress=B_INFO;
             m_typeMenu=MenuInstructions;
         }
         else if(m_elementActif==SON_ACTIF)
         {
             m_elementActif=AUCUN_EL_ACT;
-            m_boutonPress=SON_ACTIF;
+            m_boutonPress=B_SON;
         }
         else
         {
@@ -321,22 +346,22 @@ void Menu::selectionElActif()
         {
             m_typeMenu=MenuPrincipal;
             m_elementActif=AUCUN_EL_ACT;
-            m_boutonPress=MENU_ACTIF;
+            m_boutonPress=B_MENU;
         }
         else if(m_elementActif==GRILLE1_ACTIF)
         {
             m_elementActif=AUCUN_EL_ACT;
-            m_boutonPress=GRILLE1_ACTIF;
+            m_boutonPress=B_GRILLE1;
         }
         else if(m_elementActif==GRILLE2_ACTIF)
         {
             m_elementActif=AUCUN_EL_ACT;
-            m_boutonPress=GRILLE1_ACTIF;
+            m_boutonPress=B_GRILLE2;
         }
         else if(m_elementActif==GRILLE3_ACTIF)
         {
             m_elementActif=AUCUN_EL_ACT;
-            m_boutonPress=GRILLE1_ACTIF;
+            m_boutonPress=B_GRILLE3;
         }
         else
         {
@@ -350,12 +375,12 @@ void Menu::selectionElActif()
             if(!jeuEnCours)
             {
                 m_typeMenu=MenuPrincipal;
-                m_boutonPress=OK_ACTIF;
+                m_boutonPress=B_OK;
             }
             else
             {
                 m_typeMenu=MenuPause;
-                m_boutonPress=OK_ACTIF;
+                m_boutonPress=B_OK;
             }
             m_elementActif=AUCUN_EL_ACT;
         }
@@ -369,14 +394,14 @@ void Menu::selectionElActif()
         if(m_elementActif==PAUSER_ACTIF)
         {
             jeuPause=false;
-            m_boutonPress=PAUSER_ACTIF;
+            m_boutonPress=B_PAUSER;
             m_elementActif=AUCUN_EL_ACT;
 
         }
         if(m_elementActif==PAUSEREJ_ACTIF)
         {
             jeuPause=false;
-            m_boutonPress=PAUSEREJ_ACTIF;
+            m_boutonPress=B_PAUSEREJ;
             m_elementActif=AUCUN_EL_ACT;
 
         }
@@ -384,7 +409,7 @@ void Menu::selectionElActif()
         {
             m_typeMenu=MenuInstructions;
             m_elementActif=AUCUN_EL_ACT;
-            m_boutonPress=PAUSEI_ACTIF;
+            m_boutonPress=B_PAUSEI;
         }
         else if(m_elementActif==PAUSEQ_ACTIF)
         {
@@ -393,7 +418,7 @@ void Menu::selectionElActif()
             jeuDebut=false;
             m_typeMenu=MenuPrincipal;
             m_elementActif=AUCUN_EL_ACT;
-            m_boutonPress=PAUSEQ_ACTIF;
+            m_boutonPress=B_PAUSEQ;
         }
         else
         {
@@ -410,7 +435,7 @@ void Menu::selectionElActif()
             jeuFinPartie=false;
             m_typeMenu=MenuPrincipal;
             m_elementActif=AUCUN_EL_ACT;
-            m_boutonPress=FINPQ_ACTIF;
+            m_boutonPress=B_FINPQ;
         }
         else if(m_elementActif==FINPR_ACTIF)
         {
@@ -418,7 +443,7 @@ void Menu::selectionElActif()
             jeuRejouer=true;
             m_typeMenu=MenuPrincipal;
             m_elementActif=AUCUN_EL_ACT;
-            m_boutonPress=FINPR_ACTIF;
+            m_boutonPress=B_FINPR;
         }
         else
         {
