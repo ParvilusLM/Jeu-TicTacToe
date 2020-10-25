@@ -6,6 +6,7 @@ extern bool jeuPause;
 extern bool jeuDebut;
 extern bool jeuRejouer;
 extern bool jeuFinPartie;
+extern bool boutonPresse;
 extern int sourisX,sourisY;
 
 #endif // DEF_VARG

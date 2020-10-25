@@ -2,6 +2,7 @@
 #define DEF_CONTROLEUR
 
 #include <SFML/Graphics.hpp>
+#include <iostream>
 #include "decor.h"
 
 class Controleur

@@ -11,13 +11,15 @@ class Joueur
 {
 public:
     Joueur(sf::RenderWindow& fenetre);
-    void initGrille(int taille);
+    void initGrille();
+    void initBPause();
     bool selectionCase(int joueur);
     void marquageCase(int joueur);
-
     GrilleJeu& getGrille();
-
+    void gestBoutons();
+    void gestTexture(int element, int type);
     void afficheGrille();
+    void afficheBoutons();
 
     ~Joueur();
 
@@ -29,6 +31,14 @@ private:
     sf::Texture m_tGrille1;
     sf::Texture m_tGrille2;
     sf::Texture m_tGrille3;
+
+    //bouton pause
+    sf::Texture m_tbPause;
+    sf::Sprite m_sbPause;
+
+    //texte pour le gagnant
+    sf::Font m_fText;
+    sf::Text m_text;
 
 
 };

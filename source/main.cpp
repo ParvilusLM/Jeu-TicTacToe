@@ -11,6 +11,7 @@ bool jeuPause=false;
 bool jeuFinPartie=false;
 bool jeuDebut=false;
 bool jeuRejouer=false;
+bool boutonPresse=false;//pour savoir s'il y a clic
 int sourisX=0,sourisY=0;
 
 int main()
@@ -65,6 +66,7 @@ int main()
                         if (button == Mouse::Left) // Bouton gauche
                         {
                             controleurJ.gestionSelecSouris();
+                            boutonPresse=true;
                         }
 
                         if (button == Mouse::Right) // Bouton droite
@@ -192,12 +194,12 @@ int main()
 
         }
 
+        controleurJ.gestMaJ();
+
         if(jeuEnCours)
         {
-            if(!jeuPause)
-            {
-                //controleurJ.gestMajDonnees();
-            }
+
+
 
         }
         else
@@ -217,7 +219,7 @@ int main()
 
         if(jeuEnCours)
         {
-            //controleurJ.afficheJeu();
+            controleurJ.afficheJeu();
         }
         else
         {

@@ -314,6 +314,7 @@ void Menu::selectionElActif()
         {
             m_elementActif=AUCUN_EL_ACT;
             m_boutonPress=B_JOUEUR1;
+            boutonPresse=true;
             m_typeMenu=MenuSelectTypeJ;
 
         }
@@ -321,18 +322,21 @@ void Menu::selectionElActif()
         {
             m_elementActif=AUCUN_EL_ACT;
             m_boutonPress=B_JOUEUR2;
+            boutonPresse=true;
             m_typeMenu=MenuSelectTypeJ;
         }
         else if(m_elementActif==INSTRUCTIONS_ACTIF)
         {
             m_elementActif=AUCUN_EL_ACT;
             m_boutonPress=B_INFO;
+            boutonPresse=true;
             m_typeMenu=MenuInstructions;
         }
         else if(m_elementActif==SON_ACTIF)
         {
             m_elementActif=AUCUN_EL_ACT;
             m_boutonPress=B_SON;
+            boutonPresse=true;
         }
         else
         {
@@ -347,21 +351,28 @@ void Menu::selectionElActif()
             m_typeMenu=MenuPrincipal;
             m_elementActif=AUCUN_EL_ACT;
             m_boutonPress=B_MENU;
+            boutonPresse=true;
         }
         else if(m_elementActif==GRILLE1_ACTIF)
         {
             m_elementActif=AUCUN_EL_ACT;
             m_boutonPress=B_GRILLE1;
+            jeuEnCours=true;
+            boutonPresse=true;
         }
         else if(m_elementActif==GRILLE2_ACTIF)
         {
             m_elementActif=AUCUN_EL_ACT;
             m_boutonPress=B_GRILLE2;
+            jeuEnCours=true;
+            boutonPresse=true;
         }
         else if(m_elementActif==GRILLE3_ACTIF)
         {
             m_elementActif=AUCUN_EL_ACT;
             m_boutonPress=B_GRILLE3;
+            jeuEnCours=true;
+            boutonPresse=true;
         }
         else
         {
@@ -376,11 +387,13 @@ void Menu::selectionElActif()
             {
                 m_typeMenu=MenuPrincipal;
                 m_boutonPress=B_OK;
+                boutonPresse=true;
             }
             else
             {
                 m_typeMenu=MenuPause;
                 m_boutonPress=B_OK;
+                boutonPresse=true;
             }
             m_elementActif=AUCUN_EL_ACT;
         }
@@ -396,6 +409,7 @@ void Menu::selectionElActif()
             jeuPause=false;
             m_boutonPress=B_PAUSER;
             m_elementActif=AUCUN_EL_ACT;
+            boutonPresse=true;
 
         }
         if(m_elementActif==PAUSEREJ_ACTIF)
@@ -403,6 +417,7 @@ void Menu::selectionElActif()
             jeuPause=false;
             m_boutonPress=B_PAUSEREJ;
             m_elementActif=AUCUN_EL_ACT;
+            boutonPresse=true;
 
         }
         else if(m_elementActif==PAUSEI_ACTIF)
@@ -410,6 +425,7 @@ void Menu::selectionElActif()
             m_typeMenu=MenuInstructions;
             m_elementActif=AUCUN_EL_ACT;
             m_boutonPress=B_PAUSEI;
+            boutonPresse=true;
         }
         else if(m_elementActif==PAUSEQ_ACTIF)
         {
@@ -419,6 +435,7 @@ void Menu::selectionElActif()
             m_typeMenu=MenuPrincipal;
             m_elementActif=AUCUN_EL_ACT;
             m_boutonPress=B_PAUSEQ;
+            boutonPresse=true;
         }
         else
         {
@@ -436,6 +453,7 @@ void Menu::selectionElActif()
             m_typeMenu=MenuPrincipal;
             m_elementActif=AUCUN_EL_ACT;
             m_boutonPress=B_FINPQ;
+            boutonPresse=true;
         }
         else if(m_elementActif==FINPR_ACTIF)
         {
@@ -444,6 +462,7 @@ void Menu::selectionElActif()
             m_typeMenu=MenuPrincipal;
             m_elementActif=AUCUN_EL_ACT;
             m_boutonPress=B_FINPR;
+            boutonPresse=true;
         }
         else
         {

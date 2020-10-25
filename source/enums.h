@@ -5,15 +5,18 @@
 
 struct EntiteJoueur
 {
-    std::vector<sf::Vector2f > pieces;
+    std::vector<sf::Sprite > pieces;
     int type;
 };
 
 struct GrilleJeu
 {
     std::vector<int > grille;
-    EntiteJoueur joueurs;
+
+    sf::Sprite sGrille;
+    std::vector<EntiteJoueur > joueurs;
     int taille;
+    int nombreJ;
 
 };
 

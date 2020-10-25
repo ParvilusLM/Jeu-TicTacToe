@@ -34,7 +34,7 @@ Son& Decor::getSon()
 
 Joueur& Decor::getJoueur()
 {
-
+    return *m_joueur;
 }
 
 void Decor::afficheFondEc()
