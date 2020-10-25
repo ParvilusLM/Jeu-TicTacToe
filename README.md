@@ -1,8 +1,9 @@
 # Jeu-TicTacToe
 Codé en C++ et SFML 
 
-Ce jeu est une reproduction du jeu TicTacToe du site tidoue.fr 
-[tidoue.fr](https://tidou.fr/jeux-compatibles-tablettes/recreatifs/tic-tac-toe/)
+#**Projet en cours**
+
+Ce jeu est une reproduction du jeu TicTacToe
 
 En tant que debutant, mon intention n'est pas de le realiser a l'identique.
 
