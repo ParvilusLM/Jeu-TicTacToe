@@ -129,6 +129,7 @@ void Controleur::afficheFondEc()
 void Controleur::afficheJeu()
 {
     m_decor->getJoueur().afficheGrille();
+    m_decor->getJoueur().afficheBouton();
 }
 
 void Controleur::afficheMenu()

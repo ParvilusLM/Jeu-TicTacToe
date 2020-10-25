@@ -12,14 +12,13 @@ class Joueur
 public:
     Joueur(sf::RenderWindow& fenetre);
     void initGrille();
-    void initBPause();
     bool selectionCase(int joueur);
     void marquageCase(int joueur);
     GrilleJeu& getGrille();
     void gestBoutons();
-    void gestTexture(int element, int type);
+    void gestMaj();
     void afficheGrille();
-    void afficheBoutons();
+    void afficheBouton();
 
     ~Joueur();
 

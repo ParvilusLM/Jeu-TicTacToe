@@ -14,6 +14,7 @@ Joueur::Joueur(sf::RenderWindow& fenetre):m_fenetre(0)
 
     m_sbPause.setTexture(m_tbPause);
     m_sbPause.setPosition(1*20.f,1*20.f);
+    m_sbPause.setTextureRect(sf::IntRect(1*20,1*20,4*20,4*20));
 
 }
 
@@ -38,10 +39,6 @@ void Joueur::initGrille()
     }
 }
 
-void Joueur::initBPause()
-{
-
-}
 
 bool Joueur::selectionCase(int joueur)
 {
@@ -58,7 +55,12 @@ GrilleJeu& Joueur::getGrille()
     return m_grille;
 }
 
-void Joueur::gestTexture(int element, int type)
+void Joueur::gestBoutons()
+{
+
+}
+
+void Joueur::gestMaj()
 {
 
 }
@@ -80,6 +82,11 @@ void Joueur::afficheGrille()
         }
         compt++;
     }
+}
+
+void Joueur::afficheBouton()
+{
+    m_fenetre->draw(m_sbPause);
 }
 
 Joueur::~Joueur()
