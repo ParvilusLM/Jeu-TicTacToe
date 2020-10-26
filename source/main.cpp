@@ -12,6 +12,7 @@ bool jeuFinPartie=false;
 bool jeuDebut=false;
 bool jeuRejouer=false;
 bool boutonPresse=false;//pour savoir s'il y a clic
+bool laMain=true;
 int sourisX=0,sourisY=0;
 
 int main()
@@ -67,6 +68,8 @@ int main()
                         {
                             controleurJ.gestionSelecSouris();
                             boutonPresse=true;
+
+
                         }
 
                         if (button == Mouse::Right) // Bouton droite
@@ -81,12 +84,13 @@ int main()
 
                         if (button == Mouse::Left) // Bouton gauche
                         {
-                            //controleurJ.teleporTetro();
+                            controleurJ.gestBoutonsJeu();
+                            controleurJ.tourJoueur();
                         }
 
                         if (button == Mouse::Right) // Bouton droite
                         {
-                            //controleurJ.stockerTetroActif();
+
                         }
                     }
                 }
@@ -96,10 +100,6 @@ int main()
                     if (button == Mouse::Left) // Bouton gauche
                     {
                         controleurJ.gestionSelecSouris();
-                        if(jeuDebut)
-                        {
-                            //controleurJ.debutJeu();
-                        }
                     }
                 }
                 break;
@@ -112,47 +112,35 @@ int main()
                     {
                         if(sf::Keyboard::isKeyPressed(Keyboard::Left))
                         {
-                            /*
-                            if(timer>delai)
-                            {
-                                controleurJ.mouvementTetro(mouv_g);
-                                timer=0;
-                            }
-                            */
+
                         }
                         else if(sf::Keyboard::isKeyPressed(Keyboard::Right))
                         {
-                            /*
-                            if(timer>delai)
-                            {
-                                controleurJ.mouvementTetro(mouv_d);
-                                timer=0;
-                            }
-                            */
+
                         }
                         else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
                         {
-                            //controleurJ.rotationTertro(ROTATION_D);
+
                         }
                         else if(sf::Keyboard::isKeyPressed(Keyboard::Down))
                         {
-                            //controleurJ.descenteRapide();
+
                         }
                         else if(sf::Keyboard::isKeyPressed(Keyboard::Z))
                         {
-                            //controleurJ.rotationTertro(ROTATION_G);
+
                         }
                         else if(sf::Keyboard::isKeyPressed(Keyboard::C))
                         {
-                            //controleurJ.stockerTetroActif();
+
                         }
                         else if(sf::Keyboard::isKeyPressed(Keyboard::Escape))
                         {
-                            //controleurJ.pauseJeu();
+
                         }
                         else if(sf::Keyboard::isKeyPressed(Keyboard::Space))
                         {
-                            //controleurJ.teleporTetro();
+
                         }
                         else
                         {
@@ -164,7 +152,7 @@ int main()
                     {
                         if(sf::Keyboard::isKeyPressed(Keyboard::Escape))
                         {
-                            //controleurJ.pauseJeu();
+
                         }
                     }
                 }
@@ -182,7 +170,6 @@ int main()
                         char characTape;
                         characTape=static_cast<char>(evenement.text.unicode);
                         std::cout<<"ASCII character : "<<evenement.text.unicode<<std::endl;
-                        //controleurJ.saisieL(characTape);
                     }
 
                 }
@@ -204,13 +191,7 @@ int main()
         }
         else
         {
-            /*
-            if(jeuSauvegarde)
-            {
-                //controleurJ.sauvegardeScore();
-                //controleurJ.reinitTablScore();
-            }
-            */
+
         }
 
         fenetre.clear(Color(82,82,82));
@@ -227,6 +208,7 @@ int main()
         }
 
         fenetre.display();
+
     }
 
     return 0;

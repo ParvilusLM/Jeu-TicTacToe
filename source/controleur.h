@@ -16,10 +16,13 @@ public:
 
     void gestionDplSouris();
     void gestionSelecSouris();
+    void tourJoueur();
+
+    void gestBoutonsJeu();//gestion boutons autres que ceux du menu
 
     void gestMaJ();
 
-    void finPartie();
+    void finPartie(int joueur);
 
     void afficheFondEc();
     void afficheJeu();

@@ -6,13 +6,11 @@
 struct EntiteJoueur
 {
     std::vector<sf::Sprite > pieces;
-    int type;
 };
 
 struct GrilleJeu
 {
     std::vector<int > grille;
-
     sf::Sprite sGrille;
     std::vector<EntiteJoueur > joueurs;
     int taille;
@@ -68,6 +66,19 @@ enum
     B_FINPR
 };
 
+enum
+{
+    VIDE,
+    MARQUEUR1,
+    MARQUEUR2
+};
+
+enum
+{
+    HUMAIN1,
+    HUMAIN2,
+    CPU
+};
 
 
 #endif // DEF_ENUMS

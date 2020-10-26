@@ -16,7 +16,8 @@ void Controleur::debutJeu()
 
 void Controleur::pauseJeu()
 {
-
+    jeuPause=true;
+    m_decor->getMenu().setTypeMenu(MenuPause);
 }
 
 void Controleur::gestionDplSouris()
@@ -27,6 +28,31 @@ void Controleur::gestionDplSouris()
 void Controleur::gestionSelecSouris()
 {
     m_decor->getMenu().selectionElActif();
+}
+
+void Controleur::gestBoutonsJeu()
+{
+    if(m_decor->getJoueur().boutonSelect())
+    {
+        pauseJeu();
+    }
+}
+
+void Controleur::tourJoueur()
+{
+    if(laMain)
+    {
+        m_decor->getJoueur().selectionCase(HUMAIN1);
+        finPartie(HUMAIN1);
+    }
+    else
+    {
+        m_decor->getJoueur().selectionCase(HUMAIN2);
+        finPartie(HUMAIN2);
+    }
+
+
+
 }
 
 void Controleur::gestMaJ()
@@ -62,19 +88,16 @@ void Controleur::gestMaJ()
         {
             m_decor->getJoueur().getGrille().taille=3;
             jeuDebut=true;
-            std::cout<<"ahh";
         }
         else if(m_decor->getMenu().getBoutonPress()==B_GRILLE2)
         {
             m_decor->getJoueur().getGrille().taille=5;
             jeuDebut=true;
-            std::cout<<"ahh2";
         }
         else if(m_decor->getMenu().getBoutonPress()==B_GRILLE3)
         {
             m_decor->getJoueur().getGrille().taille=7;
             jeuDebut=true;
-            std::cout<<"ahh3";
         }
         else if(m_decor->getMenu().getBoutonPress()==B_PAUSER)
         {
@@ -82,7 +105,7 @@ void Controleur::gestMaJ()
         }
         else if(m_decor->getMenu().getBoutonPress()==B_PAUSEREJ)
         {
-
+            debutJeu();
         }
         else if(m_decor->getMenu().getBoutonPress()==B_PAUSEI)
         {
@@ -98,7 +121,7 @@ void Controleur::gestMaJ()
         }
         else if(m_decor->getMenu().getBoutonPress()==B_FINPR)
         {
-
+            debutJeu();
         }
         else
         {
@@ -114,11 +137,49 @@ void Controleur::gestMaJ()
         jeuDebut=false;
     }
 
+    m_decor->getJoueur().gestMaj();
+
+    if(jeuFinPartie)
+    {
+
+        jeuPause=true;
+        m_decor->getMenu().setTypeMenu(MenuFinPartie);
+
+        jeuFinPartie=false;
+    }
+
 }
 
-void Controleur::finPartie()
+void Controleur::finPartie(int joueur)
 {
+    //on teste si toutes les cases sont remplies
+    bool rempli=true;
 
+    int compt=0;
+    while(compt<m_decor->getJoueur().getGrille().grille.size())
+    {
+        if(m_decor->getJoueur().getGrille().grille.at(compt)==VIDE)
+        {
+            rempli=false;
+        }
+        compt++;
+    }
+
+    if(rempli)
+    {
+        jeuFinPartie=true;
+    }
+    else
+    {
+        if(joueur==HUMAIN1)
+        {
+
+        }
+        else
+        {
+
+        }
+    }
 }
 
 void Controleur::afficheFondEc()
@@ -130,6 +191,11 @@ void Controleur::afficheJeu()
 {
     m_decor->getJoueur().afficheGrille();
     m_decor->getJoueur().afficheBouton();
+
+    if(jeuPause)
+    {
+        m_decor->getMenu().afficheMenu();
+    }
 }
 
 void Controleur::afficheMenu()

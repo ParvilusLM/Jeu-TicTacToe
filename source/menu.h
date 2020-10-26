@@ -82,15 +82,6 @@ private:
     sf::Texture m_tMenuFinP;
     sf::Sprite m_sMenuFinP;
 
-    /*
-    //boites engl des boutons
-    sf::FloatRect boiteEBJ1,boiteEBJ2,boiteEBI,boiteEBS;
-    sf::FloatRect boiteEBM,boiteEBC1,boiteEBC2,boiteEBC3;
-    sf::FloatRect boiteEBPaus;
-    sf::FloatRect boiteEBOk;
-    sf::FloatRect boiteEBPR,boiteEBRej,boiteEBPI,boiteEBPQ;
-    sf::FloatRect boiteEBFQ,boiteEBFR;
-    */
 
 };
 

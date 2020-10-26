@@ -6,17 +6,19 @@
 #include "varG.h"
 #include "constantes.h"
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 class Joueur
 {
 public:
     Joueur(sf::RenderWindow& fenetre);
     void initGrille();
-    bool selectionCase(int joueur);
-    void marquageCase(int joueur);
+    void selectionCase(int joueur);
     GrilleJeu& getGrille();
     void gestBoutons();
+    bool boutonSelect();
     void gestMaj();
+    bool collisionTS(sf::FloatRect elem);
     void afficheGrille();
     void afficheBouton();
 
