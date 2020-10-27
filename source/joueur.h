@@ -22,6 +22,7 @@ public:
     bool collisionTS(sf::FloatRect elem);
     void afficheGrille();
     void afficheBouton();
+    void afficheText();
 
     ~Joueur();
 

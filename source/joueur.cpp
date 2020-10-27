@@ -12,9 +12,17 @@ Joueur::Joueur(sf::RenderWindow& fenetre):m_fenetre(0)
 
     m_tbPause.loadFromFile("donnees/bJeuEnCours.png");
 
+    m_fText.loadFromFile("donnees/charlbold.ttf");
+
     m_sbPause.setTexture(m_tbPause);
     m_sbPause.setPosition(1*20.f,1*20.f);
     m_sbPause.setTextureRect(sf::IntRect(1*20,1*20,4*20,4*20));
+
+    m_text.setFont(m_fText);
+    m_text.setCharacterSize(25);
+    m_text.setColor(sf::Color::Red);
+    m_text.setPosition(19.5*20,22.5*20);
+
 
 }
 
@@ -57,7 +65,7 @@ void Joueur::initGrille()
     m_grille.joueurs.insert(m_grille.joueurs.begin(),nouvJ);
     m_grille.joueurs.insert(m_grille.joueurs.begin(),nouvJ);
 
-
+    m_text.setString("   Nul");
 }
 
 
@@ -498,6 +506,18 @@ bool Joueur::partieGagne(int joueur, int nbPiecAlign)
         compt++;
     }
 
+    if(gagne)
+    {
+        if(joueur==HUMAIN1)
+        {
+            m_text.setString("JOUEUR 1");
+        }
+        else
+        {
+            m_text.setString("JOUEUR 2");
+        }
+    }
+
     return gagne;
 }
 
@@ -540,6 +560,11 @@ void Joueur::afficheGrille()
 void Joueur::afficheBouton()
 {
     m_fenetre->draw(m_sbPause);
+}
+
+void Joueur::afficheText()
+{
+    m_fenetre->draw(m_text);
 }
 
 Joueur::~Joueur()

@@ -221,12 +221,19 @@ void Controleur::afficheJeu()
     if(jeuPause)
     {
         m_decor->getMenu().afficheMenu();
+
+        if(m_decor->getMenu().getTypeMenu()!= MenuPause)
+        {
+            m_decor->getJoueur().afficheText();
+        }
+
     }
 }
 
 void Controleur::afficheMenu()
 {
     m_decor->getMenu().afficheMenu();
+
 }
 
 void Controleur::afficheInfo()
