@@ -65,7 +65,6 @@ void Joueur::initGrille()
     m_grille.joueurs.insert(m_grille.joueurs.begin(),nouvJ);
     m_grille.joueurs.insert(m_grille.joueurs.begin(),nouvJ);
 
-    m_text.setString("   Nul");
 }
 
 
@@ -195,6 +194,69 @@ void Joueur::selectionCase(int joueur)
 
 }
 
+void Joueur::selectionCaseIa()
+{
+    bool caseVide=false;
+
+    std::vector<int > ensembleCaseVide;
+
+    //on parcours le tableau pour remplir le vecteur ensembleCaseVide;
+    int compt=0;
+    while(compt<m_grille.grille.size())
+    {
+        if(m_grille.grille.at(compt)==VIDE)
+        {
+            ensembleCaseVide.insert(ensembleCaseVide.end(),compt);
+        }
+        compt++;
+    }
+
+    if(ensembleCaseVide.size()!=0)
+    {
+        //on choisit une des cases au hasard
+        int caseChoisie=ensembleCaseVide.at(rand()%ensembleCaseVide.size());
+        std::cout<<"Case choisie par l'IA: "<<caseChoisie<<std::endl;
+
+
+        laMain=true;
+
+        sf::Sprite piece;
+        piece.setTexture(m_tMarqueur);
+        if(m_grille.taille==3)
+        {
+            m_grille.grille.at(caseChoisie)=MARQUEUR2;
+            int px=caseChoisie%3;
+            int py=caseChoisie/3;
+            piece.setTextureRect(sf::IntRect(0,18*20,7*20,7*20));
+            piece.setOrigin(3.5*20,3.5*20);
+            piece.setPosition((px *(10*20)) + (7.5*20) + (5*20) ,(py * (10*20))+ (4*20) + (5*20) );
+        }
+        else if(m_grille.taille==5)
+        {
+            m_grille.grille.at(caseChoisie)=MARQUEUR2;
+            int px=caseChoisie%5;
+            int py=caseChoisie/5;
+            piece.setTextureRect(sf::IntRect(0,26*20,4*20,4*20));
+            piece.setOrigin(2*20,2*20);
+            piece.setPosition((px *(6*20)) + (7.5*20) + (3*20) ,(py * (6*20))+ (4*20) + (3*20) );
+        }
+        else
+        {
+            m_grille.grille.at(caseChoisie)=MARQUEUR2;
+            int px=caseChoisie%7;
+            int py=caseChoisie/7;
+            piece.setTextureRect(sf::IntRect(0,31*20,3*20,3*20));
+            piece.setOrigin(1.5*20,1.5*20);
+            piece.setPosition((px *(4*20)) + (7.5*20) + (3*20) ,(py * (4*20))+ (4*20) + (3*20) );
+        }
+
+        m_grille.joueurs.at(1).pieces.insert(m_grille.joueurs.at(1).pieces.begin(),piece);
+
+    }
+
+
+}
+
 GrilleJeu& Joueur::getGrille()
 {
     return m_grille;
@@ -239,9 +301,6 @@ bool Joueur::partieGagne(int joueur, int nbPiecAlign)
         //on teste que les pieces du joueur voulu
         if(m_grille.grille.at(compt)==joueur+1)
         {
-
-            //c'est pas necessaire de faire 8 verifications
-            //mais je l'ai quand meme fait pour le fun
 
             //gauche
             if(continueVerif)
@@ -494,13 +553,85 @@ bool Joueur::partieGagne(int joueur, int nbPiecAlign)
             //diagonal BG
             if(continueVerif)
             {
+                //utile pour representer la grille en 2 dimensions
+                int posx=compt % m_grille.taille;
+                int posy=compt / m_grille.taille;
 
+                int pieceAlign=0;
+
+                int comptt=0;
+                while(comptt==0)
+                {
+                    int indicCase=(posy*m_grille.taille) + posx;
+
+                    if(posx>=0 && posy<m_grille.taille)
+                    {
+                        if(m_grille.grille.at(indicCase)==joueur+1)
+                        {
+                            pieceAlign++;
+                            posx--;
+                            posy++;
+
+                        }
+                        else
+                        {
+                            comptt++;
+                        }
+
+                    }
+                    else
+                    {
+                        comptt++;
+                    }
+                }
+
+                if(pieceAlign>=nbPiecAlign)
+                {
+                    gagne=true;
+                    continueVerif=false;
+                }
             }
 
             //diagonal BD
             if(continueVerif)
             {
+                //utile pour representer la grille en 2 dimensions
+                int posx=compt % m_grille.taille;
+                int posy=compt / m_grille.taille;
 
+                int pieceAlign=0;
+
+                int comptt=0;
+                while(comptt==0)
+                {
+                    int indicCase=(posy*m_grille.taille) + posx;
+
+                    if(posx < m_grille.taille && posy< m_grille.taille)
+                    {
+                        if(m_grille.grille.at(indicCase)==joueur+1)
+                        {
+                            pieceAlign++;
+                            posx++;
+                            posy++;
+
+                        }
+                        else
+                        {
+                            comptt++;
+                        }
+
+                    }
+                    else
+                    {
+                        comptt++;
+                    }
+                }
+
+                if(pieceAlign>=nbPiecAlign)
+                {
+                    gagne=true;
+                    continueVerif=false;
+                }
             }
         }
         compt++;
@@ -514,7 +645,14 @@ bool Joueur::partieGagne(int joueur, int nbPiecAlign)
         }
         else
         {
-            m_text.setString("JOUEUR 2");
+            if(m_grille.nombreJ==1)
+            {
+                m_text.setString("   CPU");
+            }
+            else
+            {
+                m_text.setString("JOUEUR 2");
+            }
         }
     }
 

@@ -11,6 +11,18 @@ En tant que debutant, mon intention n'est pas de le realiser a l'identique.
 ## Screenshots
 Dans le dossier screenshots vous trouverez des apercus du jeu
 
+![Capture1](/screenshots/Capture1.png)
+
+![Capture2](/screenshots/Capture2.png)
+
+![Capture3](/screenshots/Capture3.png)
+
+![Capture4](/screenshots/Capture4.png)
+
+![Capture5](/screenshots/Capture5.png)
+
+![Capture6](/screenshots/Capture6.png)
+
 
 
 ## Specifications

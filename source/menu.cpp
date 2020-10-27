@@ -446,11 +446,7 @@ void Menu::selectionElActif()
     {
         if(m_elementActif==FINPQ_ACTIF)
         {
-            jeuPause=false;
-            jeuEnCours=false;
-            jeuDebut=false;
-            jeuFinPartie=false;
-            m_typeMenu=MenuPrincipal;
+
             m_elementActif=AUCUN_EL_ACT;
             m_boutonPress=B_FINPQ;
             boutonPresse=true;

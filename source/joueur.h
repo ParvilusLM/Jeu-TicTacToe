@@ -14,6 +14,7 @@ public:
     Joueur(sf::RenderWindow& fenetre);
     void initGrille();
     void selectionCase(int joueur);
+    void selectionCaseIa();
     GrilleJeu& getGrille();
     void gestBoutons();
     bool boutonSelect();

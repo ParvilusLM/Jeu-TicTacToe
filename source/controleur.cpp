@@ -11,6 +11,7 @@ Controleur::Controleur(sf::RenderWindow& fenetre):m_fenetre(0)
 
 void Controleur::debutJeu()
 {
+    laMain=true;
     m_decor->getJoueur().initGrille();
 }
 
@@ -47,7 +48,15 @@ void Controleur::tourJoueur()
     }
     else
     {
-        m_decor->getJoueur().selectionCase(HUMAIN2);
+        if(m_decor->getJoueur().getGrille().nombreJ==1)
+        {
+            m_decor->getJoueur().selectionCaseIa();
+        }
+        else
+        {
+            m_decor->getJoueur().selectionCase(HUMAIN2);
+        }
+
         finPartie(HUMAIN2);
     }
 
@@ -117,7 +126,11 @@ void Controleur::gestMaJ()
         }
         else if(m_decor->getMenu().getBoutonPress()==B_FINPQ)
         {
-
+            jeuPause=false;
+            jeuEnCours=false;
+            jeuDebut=false;
+            jeuFinPartie=false;
+            m_decor->getMenu().setTypeMenu(MenuPrincipal);
         }
         else if(m_decor->getMenu().getBoutonPress()==B_FINPR)
         {
@@ -128,23 +141,29 @@ void Controleur::gestMaJ()
 
         }
 
+        m_decor->getMenu().resetBoutonPress();
         boutonPresse=false;
     }
 
     if(jeuDebut)
     {
+        std::cout<<"Boom"<<std::endl;
         debutJeu();
         jeuDebut=false;
+    }
+
+    //tour de l'IA
+    if(jeuEnCours && !jeuPause && !laMain && m_decor->getJoueur().getGrille().nombreJ==1)
+    {
+        tourJoueur();
     }
 
     m_decor->getJoueur().gestMaj();
 
     if(jeuFinPartie)
     {
-
         jeuPause=true;
         m_decor->getMenu().setTypeMenu(MenuFinPartie);
-
         jeuFinPartie=false;
     }
 
@@ -152,58 +171,61 @@ void Controleur::gestMaJ()
 
 void Controleur::finPartie(int joueur)
 {
-    //on teste si toutes les cases sont remplies
-    bool rempli=true;
-
-    int compt=0;
-    while(compt<m_decor->getJoueur().getGrille().grille.size())
+    //on teste si le joueur a aligner le nombre de pieces voulues
+    if(joueur==HUMAIN1)
     {
-        if(m_decor->getJoueur().getGrille().grille.at(compt)==VIDE)
+        if(m_decor->getJoueur().getGrille().taille==3)
         {
-            rempli=false;
-        }
-        compt++;
-    }
-
-    if(rempli)
-    {
-        jeuFinPartie=true;
-    }
-    else
-    {
-        if(joueur==HUMAIN1)
-        {
-            if(m_decor->getJoueur().getGrille().taille==3)
+            if(m_decor->getJoueur().partieGagne(joueur,3))
             {
-                if(m_decor->getJoueur().partieGagne(joueur,3))
-                {
-                   jeuFinPartie=true;
-                }
-            }
-            else
-            {
-                if(m_decor->getJoueur().partieGagne(joueur,4))
-                {
-                    jeuFinPartie=true;
-                }
+               jeuFinPartie=true;
             }
         }
         else
         {
-            if(m_decor->getJoueur().getGrille().taille==3)
+            if(m_decor->getJoueur().partieGagne(joueur,4))
             {
-                if(m_decor->getJoueur().partieGagne(joueur,3))
-                {
-                   jeuFinPartie=true;
-                }
+                jeuFinPartie=true;
             }
-            else
+        }
+    }
+    else
+    {
+        if(m_decor->getJoueur().getGrille().taille==3)
+        {
+            if(m_decor->getJoueur().partieGagne(joueur,3))
             {
-                if(m_decor->getJoueur().partieGagne(joueur,4))
-                {
-                    jeuFinPartie=true;
-                }
+               jeuFinPartie=true;
             }
+        }
+        else
+        {
+            if(m_decor->getJoueur().partieGagne(joueur,4))
+            {
+                jeuFinPartie=true;
+            }
+        }
+    }
+
+
+    //on teste si toutes les cases sont remplies
+    if(!jeuFinPartie)
+    {
+        bool rempli=true;
+
+        int compt=0;
+        while(compt<m_decor->getJoueur().getGrille().grille.size())
+        {
+            if(m_decor->getJoueur().getGrille().grille.at(compt)==VIDE)
+            {
+                rempli=false;
+            }
+            compt++;
+        }
+
+        if(rempli)
+        {
+            jeuFinPartie=true;
         }
     }
 }

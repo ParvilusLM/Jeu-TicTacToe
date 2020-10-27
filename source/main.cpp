@@ -59,7 +59,6 @@ int main()
             case Event::MouseButtonPressed:
                 if(jeuEnCours)
                 {
-
                     if(jeuPause)
                     {
                         Mouse::Button button = evenement.mouseButton.button;
