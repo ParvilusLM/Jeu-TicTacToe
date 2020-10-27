@@ -20,7 +20,7 @@ int main()
     srand(time(0));
 
 
-    RenderWindow fenetre(VideoMode(900,700),"Tetris");
+    RenderWindow fenetre(VideoMode(900,700),"Tic Tac Toe");
 
     Controleur controleurJ(fenetre);
 

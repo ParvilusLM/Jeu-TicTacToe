@@ -173,11 +173,37 @@ void Controleur::finPartie(int joueur)
     {
         if(joueur==HUMAIN1)
         {
-
+            if(m_decor->getJoueur().getGrille().taille==3)
+            {
+                if(m_decor->getJoueur().partieGagne(joueur,3))
+                {
+                   jeuFinPartie=true;
+                }
+            }
+            else
+            {
+                if(m_decor->getJoueur().partieGagne(joueur,4))
+                {
+                    jeuFinPartie=true;
+                }
+            }
         }
         else
         {
-
+            if(m_decor->getJoueur().getGrille().taille==3)
+            {
+                if(m_decor->getJoueur().partieGagne(joueur,3))
+                {
+                   jeuFinPartie=true;
+                }
+            }
+            else
+            {
+                if(m_decor->getJoueur().partieGagne(joueur,4))
+                {
+                    jeuFinPartie=true;
+                }
+            }
         }
     }
 }

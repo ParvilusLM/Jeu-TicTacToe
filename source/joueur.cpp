@@ -219,6 +219,288 @@ bool Joueur::boutonSelect()
     return select;
 }
 
+bool Joueur::partieGagne(int joueur, int nbPiecAlign)
+{
+    bool gagne=false;
+    bool continueVerif=true;
+
+    //on parcours toute la grille
+    int compt=0;
+    while(compt<m_grille.grille.size())
+    {
+        //on teste que les pieces du joueur voulu
+        if(m_grille.grille.at(compt)==joueur+1)
+        {
+
+            //c'est pas necessaire de faire 8 verifications
+            //mais je l'ai quand meme fait pour le fun
+
+            //gauche
+            if(continueVerif)
+            {
+                //utile pour representer la grille en 2 dimensions
+                int posx=compt % m_grille.taille;
+                int posy=compt / m_grille.taille;
+
+                int pieceAlign=0;
+
+                int comptt=0;
+                while(comptt==0)
+                {
+                    int indicCase=(posy*m_grille.taille) + posx;
+
+                    if(posx>=0)
+                    {
+                        if(m_grille.grille.at(indicCase)==joueur+1)
+                        {
+                            pieceAlign++;
+                            posx--;
+                        }
+                        else
+                        {
+                            comptt++;
+                        }
+
+                    }
+                    else
+                    {
+                        comptt++;
+                    }
+                }
+
+                if(pieceAlign>=nbPiecAlign)
+                {
+                    gagne=true;
+                    continueVerif=false;
+                }
+
+            }
+
+
+            //droite
+            if(continueVerif)
+            {
+                //utile pour representer la grille en 2 dimensions
+                int posx=compt % m_grille.taille;
+                int posy=compt / m_grille.taille;
+
+                int pieceAlign=0;
+
+                int comptt=0;
+                while(comptt==0)
+                {
+                    int indicCase=(posy*m_grille.taille) + posx;
+
+                    if(posx<m_grille.taille)
+                    {
+                        if(m_grille.grille.at(indicCase)==joueur+1)
+                        {
+                            pieceAlign++;
+                            posx++;
+                        }
+                        else
+                        {
+                            comptt++;
+                        }
+
+                    }
+                    else
+                    {
+                        comptt++;
+                    }
+                }
+
+                if(pieceAlign>=nbPiecAlign)
+                {
+                    gagne=true;
+                    continueVerif=false;
+                }
+
+            }
+
+
+            //haut
+            if(continueVerif)
+            {
+                //utile pour representer la grille en 2 dimensions
+                int posx=compt % m_grille.taille;
+                int posy=compt / m_grille.taille;
+
+                int pieceAlign=0;
+
+                int comptt=0;
+                while(comptt==0)
+                {
+                    int indicCase=(posy*m_grille.taille) + posx;
+
+                    if(posy>=0)
+                    {
+                        if(m_grille.grille.at(indicCase)==joueur+1)
+                        {
+                            pieceAlign++;
+                            posy--;
+                        }
+                        else
+                        {
+                            comptt++;
+                        }
+
+                    }
+                    else
+                    {
+                        comptt++;
+                    }
+                }
+
+                if(pieceAlign>=nbPiecAlign)
+                {
+                    gagne=true;
+                    continueVerif=false;
+                }
+            }
+
+            //bas
+            if(continueVerif)
+            {
+                //utile pour representer la grille en 2 dimensions
+                int posx=compt % m_grille.taille;
+                int posy=compt / m_grille.taille;
+
+                int pieceAlign=0;
+
+                int comptt=0;
+                while(comptt==0)
+                {
+                    int indicCase=(posy*m_grille.taille) + posx;
+
+                    if(posy<m_grille.taille)
+                    {
+                        if(m_grille.grille.at(indicCase)==joueur+1)
+                        {
+                            pieceAlign++;
+                            posy++;
+                        }
+                        else
+                        {
+                            comptt++;
+                        }
+
+                    }
+                    else
+                    {
+                        comptt++;
+                    }
+                }
+
+                if(pieceAlign>=nbPiecAlign)
+                {
+                    gagne=true;
+                    continueVerif=false;
+                }
+            }
+
+            //diagonal HG
+            if(continueVerif)
+            {
+                //utile pour representer la grille en 2 dimensions
+                int posx=compt % m_grille.taille;
+                int posy=compt / m_grille.taille;
+
+                int pieceAlign=0;
+
+                int comptt=0;
+                while(comptt==0)
+                {
+                    int indicCase=(posy*m_grille.taille) + posx;
+
+                    if(posx>=0 && posy>=0)
+                    {
+                        if(m_grille.grille.at(indicCase)==joueur+1)
+                        {
+                            pieceAlign++;
+                            posx--;
+                            posy--;
+
+                        }
+                        else
+                        {
+                            comptt++;
+                        }
+
+                    }
+                    else
+                    {
+                        comptt++;
+                    }
+                }
+
+                if(pieceAlign>=nbPiecAlign)
+                {
+                    gagne=true;
+                    continueVerif=false;
+                }
+            }
+
+            //diagonal HD
+            if(continueVerif)
+            {
+                //utile pour representer la grille en 2 dimensions
+                int posx=compt % m_grille.taille;
+                int posy=compt / m_grille.taille;
+
+                int pieceAlign=0;
+
+                int comptt=0;
+                while(comptt==0)
+                {
+                    int indicCase=(posy*m_grille.taille) + posx;
+
+                    if(posx < m_grille.taille && posy>=0)
+                    {
+                        if(m_grille.grille.at(indicCase)==joueur+1)
+                        {
+                            pieceAlign++;
+                            posx++;
+                            posy--;
+
+                        }
+                        else
+                        {
+                            comptt++;
+                        }
+
+                    }
+                    else
+                    {
+                        comptt++;
+                    }
+                }
+
+                if(pieceAlign>=nbPiecAlign)
+                {
+                    gagne=true;
+                    continueVerif=false;
+                }
+            }
+
+            //diagonal BG
+            if(continueVerif)
+            {
+
+            }
+
+            //diagonal BD
+            if(continueVerif)
+            {
+
+            }
+        }
+        compt++;
+    }
+
+    return gagne;
+}
+
 void Joueur::gestMaj()
 {
     gestBoutons();

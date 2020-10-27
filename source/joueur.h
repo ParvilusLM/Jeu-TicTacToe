@@ -17,6 +17,7 @@ public:
     GrilleJeu& getGrille();
     void gestBoutons();
     bool boutonSelect();
+    bool partieGagne(int joueur, int nbPiecAlign);
     void gestMaj();
     bool collisionTS(sf::FloatRect elem);
     void afficheGrille();
