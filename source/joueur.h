@@ -13,8 +13,8 @@ class Joueur
 public:
     Joueur(sf::RenderWindow& fenetre);
     void initGrille();
-    void selectionCase(int joueur);
-    void selectionCaseIa();
+    bool selectionCase(int joueur);
+    bool selectionCaseIa();
     GrilleJeu& getGrille();
     void gestBoutons();
     bool boutonSelect();

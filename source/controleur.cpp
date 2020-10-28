@@ -43,18 +43,39 @@ void Controleur::tourJoueur()
 {
     if(laMain)
     {
-        m_decor->getJoueur().selectionCase(HUMAIN1);
+        if(m_decor->getJoueur().selectionCase(HUMAIN1))
+        {
+            m_decor->getSon().jouerSon(SON_AUTORISE);
+        }
+        else
+        {
+            m_decor->getSon().jouerSon(SON_INTERDIT);
+
+        }
+
         finPartie(HUMAIN1);
     }
     else
     {
         if(m_decor->getJoueur().getGrille().nombreJ==1)
         {
-            m_decor->getJoueur().selectionCaseIa();
+            if(m_decor->getJoueur().selectionCaseIa())
+            {
+                m_decor->getSon().jouerSon(SON_AUTORISE);
+            }
+
         }
         else
         {
-            m_decor->getJoueur().selectionCase(HUMAIN2);
+            if(m_decor->getJoueur().selectionCase(HUMAIN2))
+            {
+                m_decor->getSon().jouerSon(SON_AUTORISE);
+            }
+            else
+            {
+                m_decor->getSon().jouerSon(SON_INTERDIT);
+            }
+
         }
 
         finPartie(HUMAIN2);
@@ -69,6 +90,12 @@ void Controleur::gestMaJ()
     //gestions boutons presses pour les menus
     if(boutonPresse)
     {
+        //pour le son quand on clic sur un bouton
+        if(m_decor->getMenu().getBoutonPress()!= AUCUN_EL_ACT)
+        {
+            m_decor->getSon().jouerSon(SON_BCLIK);
+        }
+
         if(m_decor->getMenu().getBoutonPress()==B_INFO)
         {
 
@@ -97,16 +124,19 @@ void Controleur::gestMaJ()
         {
             m_decor->getJoueur().getGrille().taille=3;
             jeuDebut=true;
+
         }
         else if(m_decor->getMenu().getBoutonPress()==B_GRILLE2)
         {
             m_decor->getJoueur().getGrille().taille=5;
             jeuDebut=true;
+
         }
         else if(m_decor->getMenu().getBoutonPress()==B_GRILLE3)
         {
             m_decor->getJoueur().getGrille().taille=7;
             jeuDebut=true;
+
         }
         else if(m_decor->getMenu().getBoutonPress()==B_PAUSER)
         {
@@ -153,7 +183,7 @@ void Controleur::gestMaJ()
     }
 
     //tour de l'IA
-    if(jeuEnCours && !jeuPause && !laMain && m_decor->getJoueur().getGrille().nombreJ==1)
+    if(jeuEnCours && !jeuFinPartie && !jeuPause && !laMain && m_decor->getJoueur().getGrille().nombreJ==1)
     {
         tourJoueur();
     }

@@ -29,7 +29,7 @@ Info& Decor::getInfo()
 
 Son& Decor::getSon()
 {
-
+    return *m_son;
 }
 
 Joueur& Decor::getJoueur()

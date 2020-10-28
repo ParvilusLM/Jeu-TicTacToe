@@ -49,6 +49,7 @@ enum
 
 enum
 {
+    AUCUN_B_PRESSE,
     B_INFO,
     B_SON,
     B_JOUEUR1,
@@ -78,6 +79,13 @@ enum
     HUMAIN1,
     HUMAIN2,
     CPU
+};
+
+enum
+{
+    SON_BCLIK,
+    SON_AUTORISE,
+    SON_INTERDIT
 };
 
 

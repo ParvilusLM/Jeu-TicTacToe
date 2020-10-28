@@ -1,14 +1,14 @@
 # depslib dependency file v1.0
-1603830966 source:c:\users\my foe\documents\programmation projets\sfml\version 2.0\proj tictactoe\tictactoe 2.0\source\controleur.cpp
+1603898772 source:c:\users\my foe\documents\programmation projets\sfml\version 2.0\proj tictactoe\tictactoe 2.0\source\controleur.cpp
 	"controleur.h"
 
-1603590945 source:c:\users\my foe\documents\programmation projets\sfml\version 2.0\proj tictactoe\tictactoe 2.0\source\decor.cpp
+1603898037 source:c:\users\my foe\documents\programmation projets\sfml\version 2.0\proj tictactoe\tictactoe 2.0\source\decor.cpp
 	"decor.h"
 
 1603338575 source:c:\users\my foe\documents\programmation projets\sfml\version 2.0\proj tictactoe\tictactoe 2.0\source\info.cpp
 	"info.h"
 
-1603830677 source:c:\users\my foe\documents\programmation projets\sfml\version 2.0\proj tictactoe\tictactoe 2.0\source\menu.cpp
+1603899484 source:c:\users\my foe\documents\programmation projets\sfml\version 2.0\proj tictactoe\tictactoe 2.0\source\menu.cpp
 	"menu.h"
 
 1603338335 c:\users\my foe\documents\programmation projets\sfml\version 2.0\proj tictactoe\tictactoe 2.0\source\info.h
@@ -426,7 +426,7 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1603661694 c:\users\my foe\documents\programmation projets\sfml\version 2.0\proj tictactoe\tictactoe 2.0\source\enums.h
+1603899477 c:\users\my foe\documents\programmation projets\sfml\version 2.0\proj tictactoe\tictactoe 2.0\source\enums.h
 	<SFML/Graphics.hpp>
 
 1603676821 c:\users\my foe\documents\programmation projets\sfml\version 2.0\proj tictactoe\tictactoe 2.0\source\varg.h
@@ -451,13 +451,14 @@
 	"varG.h"
 	"constantes.h"
 
-1603338624 c:\users\my foe\documents\programmation projets\sfml\version 2.0\proj tictactoe\tictactoe 2.0\source\son.h
+1603896657 c:\users\my foe\documents\programmation projets\sfml\version 2.0\proj tictactoe\tictactoe 2.0\source\son.h
 	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
 	"enums.h"
 	"varG.h"
 	"constantes.h"
 
-1603808144 c:\users\my foe\documents\programmation projets\sfml\version 2.0\proj tictactoe\tictactoe 2.0\source\joueur.h
+1603901157 c:\users\my foe\documents\programmation projets\sfml\version 2.0\proj tictactoe\tictactoe 2.0\source\joueur.h
 	"enums.h"
 	"varG.h"
 	"constantes.h"
@@ -473,6 +474,110 @@
 	<SFML/Graphics.hpp>
 	"controleur.h"
 
-1603338695 source:c:\users\my foe\documents\programmation projets\sfml\version 2.0\proj tictactoe\tictactoe 2.0\source\son.cpp
+1603898095 source:c:\users\my foe\documents\programmation projets\sfml\version 2.0\proj tictactoe\tictactoe 2.0\source\son.cpp
 	"son.h"
+
+1525815618 c:\program files (x86)\codeblocks\sfml-2.5.1\include\sfml\audio.hpp
+	<SFML/System.hpp>
+	<SFML/Audio/InputSoundFile.hpp>
+	<SFML/Audio/Listener.hpp>
+	<SFML/Audio/Music.hpp>
+	<SFML/Audio/OutputSoundFile.hpp>
+	<SFML/Audio/Sound.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundBufferRecorder.hpp>
+	<SFML/Audio/SoundFileFactory.hpp>
+	<SFML/Audio/SoundFileReader.hpp>
+	<SFML/Audio/SoundFileWriter.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/Audio/SoundStream.hpp>
+
+1525815618 c:\program files (x86)\codeblocks\sfml-2.5.1\include\sfml\audio\inputsoundfile.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<algorithm>
+
+1525815618 c:\program files (x86)\codeblocks\sfml-2.5.1\include\sfml\audio\export.hpp
+	<SFML/Config.hpp>
+
+1525815618 c:\program files (x86)\codeblocks\sfml-2.5.1\include\sfml\audio\listener.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/Vector3.hpp>
+
+1525815618 c:\program files (x86)\codeblocks\sfml-2.5.1\include\sfml\audio\music.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundStream.hpp>
+	<SFML/Audio/InputSoundFile.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+
+1525815618 c:\program files (x86)\codeblocks\sfml-2.5.1\include\sfml\audio\soundstream.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Time.hpp>
+	<SFML/System/Mutex.hpp>
+	<cstdlib>
+
+1525815618 c:\program files (x86)\codeblocks\sfml-2.5.1\include\sfml\audio\soundsource.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Vector3.hpp>
+
+1525815618 c:\program files (x86)\codeblocks\sfml-2.5.1\include\sfml\audio\alresource.hpp
+	<SFML/Audio/Export.hpp>
+
+1525815618 c:\program files (x86)\codeblocks\sfml-2.5.1\include\sfml\audio\outputsoundfile.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<string>
+
+1525815618 c:\program files (x86)\codeblocks\sfml-2.5.1\include\sfml\audio\sound.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Time.hpp>
+	<cstdlib>
+
+1525815618 c:\program files (x86)\codeblocks\sfml-2.5.1\include\sfml\audio\soundbuffer.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+	<set>
+
+1525815618 c:\program files (x86)\codeblocks\sfml-2.5.1\include\sfml\audio\soundbufferrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<vector>
+
+1525815618 c:\program files (x86)\codeblocks\sfml-2.5.1\include\sfml\audio\soundrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Time.hpp>
+	<vector>
+	<string>
+
+1525815618 c:\program files (x86)\codeblocks\sfml-2.5.1\include\sfml\audio\soundfilefactory.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+	<vector>
+	<SFML/Audio/SoundFileFactory.inl>
+
+1525815618 c:\program files (x86)\codeblocks\sfml-2.5.1\include\sfml\audio\soundfilefactory.inl
+
+1525815618 c:\program files (x86)\codeblocks\sfml-2.5.1\include\sfml\audio\soundfilereader.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+
+1525815618 c:\program files (x86)\codeblocks\sfml-2.5.1\include\sfml\audio\soundfilewriter.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
 

@@ -68,8 +68,9 @@ void Joueur::initGrille()
 }
 
 
-void Joueur::selectionCase(int joueur)
+bool Joueur::selectionCase(int joueur)
 {
+    bool caseSelectionne=false;
     bool caseVide=false;
 
     //determiner la case sur lequel est le curseur
@@ -106,6 +107,7 @@ void Joueur::selectionCase(int joueur)
 
     if(caseVide)
     {
+        caseSelectionne =true;
         if(joueur==HUMAIN1)
         {
             laMain=false;
@@ -190,12 +192,15 @@ void Joueur::selectionCase(int joueur)
         }
     }
 
+    return caseSelectionne;
+
     std::cout<<"Case: "<<no_case<<std::endl;
 
 }
 
-void Joueur::selectionCaseIa()
+bool Joueur::selectionCaseIa()
 {
+    bool caseSelectionne=false;
     bool caseVide=false;
 
     std::vector<int > ensembleCaseVide;
@@ -213,6 +218,7 @@ void Joueur::selectionCaseIa()
 
     if(ensembleCaseVide.size()!=0)
     {
+        caseSelectionne=true;
         //on choisit une des cases au hasard
         int caseChoisie=ensembleCaseVide.at(rand()%ensembleCaseVide.size());
         std::cout<<"Case choisie par l'IA: "<<caseChoisie<<std::endl;
@@ -253,8 +259,7 @@ void Joueur::selectionCaseIa()
         m_grille.joueurs.at(1).pieces.insert(m_grille.joueurs.at(1).pieces.begin(),piece);
 
     }
-
-
+    return caseSelectionne;
 }
 
 GrilleJeu& Joueur::getGrille()
