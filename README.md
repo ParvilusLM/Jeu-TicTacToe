@@ -1,7 +1,6 @@
 # Jeu-TicTacToe
 Codé en C++ et SFML 
 
-#**Projet en cours**
 
 Ce jeu est une reproduction du jeu TicTacToe
 
